@@ -6,7 +6,7 @@
 */
 
 // 1. Variáveis para armazenar o nome e a XP do herói
-let nomeHeroi = "Dragonite";
+let nomeHeroi = "Eloah";
 let xpHeroi = 11000; // Altere este valor para testar diferentes níveis
 let nivelHeroi = "";
 
