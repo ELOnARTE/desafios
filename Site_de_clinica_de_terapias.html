@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Vitalidade - Terapias Integrativas</title>
+    <style>
+        /* CSS Básico para estruturar o layout conforme o pedido:
+           HEADER
+           MENU
+           CONTENT
+           FOOTER
+        */
+        
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container Principal que simula a "página" */
+        .main-container {
+            width: 100%;
+            max-width: 900px;
+            background-color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: #88c0a8; /* Verde terapêutico */
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .header-title {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #2c5e50;
+        }
+
+        /* --- MENU DE NAVEGAÇÃO --- */
+        nav {
+            background-color: #2c3e50;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: #1abc9c;
+        }
+
+        /* --- CONTENT (Conteúdo Principal) --- */
+        main {
+            padding: 40px;
+            flex: 1; /* Ocupa o espaço restante */
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Esconde as seções que não estão ativas */
+        .page-section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1, h2 {
+            color: #2c5e50;
+            border-bottom: 2px solid #88c0a8;
+            padding-bottom: 10px;
+        }
+
+        /* Estilização da Tabela (Horário de Atendimento) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e2f0e9;
+        }
+
+        /* Estilização do Formulário (Contato) */
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        button[type="reset"] {
+            background-color: #e74c3c;
+            color: white;
+            margin-left: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Responsividade para celular */
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <!-- HEADER: A imagem muda via JavaScript -->
+        <header>
+            <img id="header-img" src="https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=2070&auto=format&fit=crop" alt="Ambiente Terapêutico">
+            <div class="header-title">
+                <h1 style="border:none; margin:0; font-size: 1.5rem;">Clínica Vitalidade</h1>
+            </div>
+        </header>
+
+        <!-- MENU DE NAVEGAÇÃO -->
+        <nav>
+            <a onclick="showPage('home')" class="active" id="nav-home">Página Principal</a>
+            <a onclick="showPage('sobre')" id="nav-sobre">Sobre a Clínica</a>
+            <a onclick="showPage('horarios')" id="nav-horarios">Horário de Atendimento</a>
+            <a onclick="showPage('contato')" id="nav-contato">Contato</a>
+        </nav>
+
+        <!-- CONTENT -->
+        <main>
+            <!-- 1. PÁGINA PRINCIPAL -->
+            <section id="home" class="page-section active">
+                <h1>Bem-vindo à Vitalidade</h1>
+                <p>
+                    Descubra o poder do equilíbrio. Na Clínica Vitalidade, acreditamos que a saúde é um estado completo de bem-estar físico, mental e social.
+                </p>
+                <p>
+                    Oferecemos um refúgio de tranquilidade no meio da cidade, focado em <strong>Terapias Integrativas e Complementares</strong> para restaurar sua energia vital.
+                </p>
+                <hr>
+                <h3>Nossos Destaques</h3>
+                <ul>
+                    <li>Profissionais certificados e experientes.</li>
+                    <li>Ambiente climatizado e aromatizado com óleos essenciais.</li>
+                    <li>Atendimento personalizado focado na raiz do problema.</li>
+                </ul>
+            </section>
+
+            <!-- 2. SOBRE A CLÍNICA -->
+            <section id="sobre" class="page-section">
+                <h1>Sobre a Clínica</h1>
+                <p>
+                    Fundada em 2010, a <em>Clínica Vitalidade</em> nasceu do sonho de integrar a medicina tradicional com práticas milenares de cura.
+                </p>
+                <p>
+                    Nossa missão é proporcionar qualidade de vida através de tratamentos naturais, respeitando a individualidade de cada ser humano.
+                </p>
+                <blockquote>
+                    "A cura está ligada ao tempo e às vezes também às circunstâncias." - Hipócrates
+                </blockquote>
+                <h3>Nossa Estrutura</h3>
+                <p>
+                    Contamos com 5 salas de atendimento individual, um salão para meditação em grupo e uma loja de produtos naturais parceira.
+                </p>
+            </section>
+
+            <!-- 3. HORÁRIO DE ATENDIMENTO (Com Tabela) -->
+            <section id="horarios" class="page-section">
+                <h1>Horários e Serviços</h1>
+                <p>Confira abaixo nossa grade de atendimentos. Recomendamos agendar com pelo menos 24 horas de antecedência.</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Serviços</th>
+                            <th>Segunda a Sexta</th>
+                            <th>Sábados</th>
+                            <th>Feriados</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fitoterapia</td>
+                            <td>08h - 19h</td>
+                            <td>08h - 14h</td>
+                            <td>08h - 14h</td>
+                        </tr>
+                        <tr>
+                            <td>Massagens</td>
+                            <td>08h - 19h</td>
+                            <td>08h - 14h</td>
+                            <td>08h - 14h</td>
+                        </tr>
+                        <tr>
+                            <td>Florais</td>
+                            <td>08h - 19h</td>
+                            <td>08h - 18h</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Acupuntura</td>
+                            <td>08h - 19h</td>
+                            <td>08h - 18h</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <small>* Os horários podem sofrer alterações sem aviso prévio em datas festivas.</small>
+            </section>
+
+            <!-- 4. CONTATO (Com Iframe e Formulário) -->
+            <section id="contato" class="page-section">
+                <h1>Fale Conosco</h1>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                    <!-- Informações de Contato -->
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3>Informações</h3>
+                        <address>
+                            <strong>Clínica Vitalidade</strong><br>
+                            Rua das Flores, 123 - Centro<br>
+                            Cidade Modelo, SP - CEP 00000-000<br>
+                        </address>
+                        <ul>
+                            <li><strong>Telefone:</strong> (11) 99999-9999</li>
+                            <li><strong>WhatsApp:</strong> (11) 98888-8888</li>
+                            <li><strong>Email:</strong> contato@clinicavitalidade.com.br</li>
+                        </ul>
+
+                        <h3>Localização</h3>
+                        <!-- Iframe do Google Maps -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197586021235!2d-46.65207948440714!3d-23.561347667475144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+
+                    <!-- Formulário -->
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3>Envie uma Mensagem</h3>
+                        <form action="#" method="post">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+
+                            <label for="assunto">Assunto:</label>
+                            <input type="text" id="assunto" name="assunto" placeholder="Motivo do contato">
+
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+
+                            <div class="form-buttons">
+                                <button type="submit">Enviar</button>
+                                <button type="reset">Limpar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER (Padrão para todas as páginas) -->
+        <footer>
+            <p>&copy; 2024 Clínica Vitalidade - Terapias Integrativas.</p>
+            <p>Rua das Flores, 123 - Centro | Tel: (11) 99999-9999</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Script simples para simular a navegação entre páginas e troca de imagens
+        function showPage(pageId) {
+            // 1. Esconde todas as seções
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // 2. Remove a classe 'active' de todos os botões do menu
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            // 3. Mostra a seção desejada
+            document.getElementById(pageId).classList.add('active');
+
+            // 4. Adiciona a classe 'active' ao botão clicado
+            document.getElementById('nav-' + pageId).classList.add('active');
+
+            // 5. Troca a imagem do Header conforme pedido no desafio
+            const headerImg = document.getElementById('header-img');
+            
+            if(pageId === 'home') {
+                headerImg.src = "https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=2070&auto=format&fit=crop"; // Zen stones
+            } else if (pageId === 'sobre') {
+                headerImg.src = "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2068&auto=format&fit=crop"; // Clinic interior
+            } else if (pageId === 'horarios') {
+                headerImg.src = "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop"; // Clock/Schedule vibe
+            } else if (pageId === 'contato') {
+                headerImg.src = "https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=2069&auto=format&fit=crop"; // Contact/Phone
+            }
+        }
+    </script>
+</body>
+</html>
+
