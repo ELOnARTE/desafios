@@ -47,7 +47,7 @@ Sou um profissional polímata, incluindo a área de Tecnologia da Informação, 
 
 Além do código, sou músico e pesquisador de temas espirituais.
 
-* **🎵 Álbum Autoral (Dez/2025):** Composição e produção de músicas (MPB, Soul, Celtic) inspiradas em Arquétipos Maias e espiritualidade.
+* **🎵 Álbum Autoral ELOnARTE (Dez/2025):** Composição e produção de músicas (MPB, Soul, Celtic) inspiradas em Arquétipos Maias e espiritualidade.
 * **🖌️ Arteterapia:** Pesquisa sobre o impacto da arte na inclusão e no ensino.
 
 ---
