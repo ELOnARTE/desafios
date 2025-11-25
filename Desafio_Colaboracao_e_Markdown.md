@@ -2,7 +2,7 @@
 
 > *"Unindo a lógica da programação à sensibilidade da Arteterapia e Neurociência para criar soluções tecnológicas humanizadas."*
 
-Sou um profissional polímata em transição para a área de Tecnologia, trazendo uma bagagem robusta de **Gestão Pública** e **Educação**. Atualmente focado no desenvolvimento Full Stack e na intersecção entre Tecnologia e Desenvolvimento Humano (EdTech/HealthTech).
+Sou um profissional polímata, incluindo a área de Tecnologia da Informação, trazendo uma bagagem robusta de **Administração** e **Educação**. Atualmente focado no desenvolvimento Full Stack e na intersecção entre Tecnologia e Desenvolvimento Humano (EdTech/HealthTech).
 
 ---
 
@@ -13,9 +13,9 @@ Sou um profissional polímata em transição para a área de Tecnologia, trazend
 | Status | Formação | Tecnologias Chave |
 | :--- | :--- | :--- |
 | 🎓 **Finalizando** | **Sistemas para Internet** | Web Full Stack |
-| 🚀 **Em Curso** | Formações Dio.me | JS, Node.js, CSS, React |
-| ✅ **Concluído** | Pós em Gestão de TI (GTI) | Governança, ITIL |
-| ✅ **Concluído** | Certificações Técnicas | Lógica, Python, Linux, Git |
+| 🚀 **Em Curso** | Formações Dio.me | JavaScript, Node.js, CSS, React |
+| ✅ **Concluído** | Pós em Gestão de Tecnologia da Informação (GTI) | Governança, ITIL |
+| ✅ **Concluído** | Certificações Técnicas | Lógica de Programação, HTML5 Developer, PHP, SQL, Python, Linux, GitHub |
 
 #### 2. 🧠 Humanidades & Educação (O Diferencial)
 *Entendendo pessoas e processos de aprendizado*
@@ -33,9 +33,9 @@ Sou um profissional polímata em transição para a área de Tecnologia, trazend
 
 ### 🛠 Tech Stack & Ferramentas
 
-* **OS:** Linux (Ambiente principal de desenvolvimento)
+* **OS:** Linux, Android (Ambientes principais de desenvolvimento)
 * **Linguagens:** JavaScript, Python, PHP
-* **Web:** HTML5, CSS3, WordPress, WooCommerce
+* **Web:** HTML5, CSS3, Astro.Build, WordPress, WooCommerce
 * **Infra/DevOps:** Git, GitHub, Hostinger, Cloudflare
 
 ---
@@ -45,7 +45,7 @@ Sou um profissional polímata em transição para a área de Tecnologia, trazend
 Além do código, sou músico e pesquisador de temas espirituais.
 
 * **🎵 Álbum Autoral (Dez/2025):** Composição e produção de músicas (MPB, Soul, Celtic) inspiradas em Arquétipos Maias e espiritualidade.
-* **🖌️ Arteterapia:** Pesquisa sobre o impacto da arte na inclusão e no ensino de idiomas.
+* **🖌️ Arteterapia:** Pesquisa sobre o impacto da arte na inclusão e no ensino.
 
 ---
 
