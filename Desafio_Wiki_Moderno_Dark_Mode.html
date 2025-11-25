@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arteterapia - WikiDesafio (Dark Mode)</title>
+    <style>
+        /* --- CSS DARK MODE --- */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Fundo geral bem escuro */
+            color: #eaecf0; /* Texto claro (não branco puro para não ofuscar) */
+        }
+
+        /* Layout Principal */
+        header {
+            background-color: #202122; /* Cinza escuro */
+            padding: 15px 20px;
+            border-bottom: 1px solid #4a4a4a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: 'Times New Roman', serif;
+            color: #fff;
+        }
+
+        /* Input de busca no Dark Mode */
+        input[type="search"] {
+            background-color: #333;
+            border: 1px solid #555;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #444;
+            color: #fff;
+            border: 1px solid #555;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #202122; /* Fundo do conteúdo */
+            min-height: 100vh;
+        }
+
+        /* Menu Lateral Esquerdo */
+        nav {
+            width: 180px;
+            padding: 20px;
+            border-right: 1px solid #4a4a4a;
+            background-color: #1a1a1a; /* Pouco mais escuro que o main */
+            flex-shrink: 0; 
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            margin-bottom: 8px;
+        }
+
+        /* Links adaptados para fundo escuro */
+        a {
+            text-decoration: none;
+            color: #8ab4f8; /* Azul claro para contraste */
+        }
+        nav a {
+            color: #8ab4f8;
+        }
+
+        nav a:hover, a:hover {
+            text-decoration: underline;
+        }
+
+        /* Conteúdo Principal */
+        main {
+            padding: 25px;
+            flex-grow: 1; 
+        }
+
+        h1 {
+            border-bottom: 1px solid #4a4a4a;
+            padding-bottom: 5px;
+            margin-top: 0;
+            color: #fff;
+        }
+
+        h2 {
+            border-bottom: 1px solid #4a4a4a;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            color: #fff;
+        }
+
+        /* A INFOBOX (Dark Mode) */
+        .infobox {
+            float: right;
+            width: 300px;
+            background-color: #2a2a2e; /* Destaca levemente do fundo */
+            border: 1px solid #4a4a4a;
+            padding: 10px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .infobox h3 {
+            text-align: center; 
+            background: #333; /* Cabeçalho da infobox mais escuro */
+            padding: 5px; 
+            margin-top: 0;
+            color: #fff;
+        }
+
+        .infobox img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #555;
+            opacity: 0.9; /* Leve opacidade para não brilhar demais */
+        }
+
+        .infobox ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .infobox li {
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #444;
+        }
+
+        /* Estilo do Índice (<details>) Dark */
+        details {
+            border: 1px solid #4a4a4a;
+            background-color: #2a2a2e;
+            padding: 10px;
+            display: inline-block;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        /* Blockquote (Citações) */
+        blockquote {
+            border-left: 3px solid #8ab4f8;
+            margin: 20px;
+            padding-left: 15px;
+            color: #ccc;
+            font-style: italic;
+        }
+
+        /* Box do Progresso (Bônus) */
+        .progress-box {
+            background: #2a2a2e; 
+            border: 1px solid #4a4a4a; 
+            padding: 15px; 
+            border-radius: 5px;
+        }
+
+        /* Estilo das Barras para Dark Mode */
+        meter, progress {
+            width: 100%;
+            height: 20px;
+            accent-color: #8ab4f8; /* Define a cor da barra em navegadores modernos */
+        }
+
+        /* Ajuste manual de cores para Meter/Progress em alguns browsers */
+        meter::-webkit-meter-bar, progress::-webkit-progress-bar {
+            background: #444; /* Fundo da barra vazio */
+        }
+        meter::-webkit-meter-optimum-value {
+            background: #4caf50; /* Verde */
+        }
+        progress::-webkit-progress-value {
+            background: #8ab4f8; /* Azul */
+        }
+
+        footer {
+            clear: both;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid #444;
+            margin-top: 40px;
+            background-color: #202122;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">WikiArteterapia</div>
+        <form>
+            <input type="search" placeholder="Pesquisar..." aria-label="Pesquisar na Wiki">
+            <button>Busca</button>
+        </form>
+    </header>
+
+    <div class="container">
+        
+        <nav>
+            <ul>
+                <li><a href="#">Página principal</a></li>
+                <li><a href="#">Conteúdo destacado</a></li>
+                <li><a href="#">Eventos atuais</a></li>
+                <li><a href="#">Página aleatória</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <article>
+                <h1>Arteterapia</h1>
+                <p style="color: #aaa; font-size: 0.9em;">Origem: WikiDesafio, a enciclopédia livre de aprendizado.</p>
+
+                <aside class="infobox">
+                    <h3>Arteterapia</h3>
+                    <figure style="margin: 0; text-align: center;">
+                        <img src="https://placehold.co/280x180/333/EEE?text=Mandala+Terap%C3%AAutica" alt="Exemplo de Mandala Terapêutica">
+                        <figcaption style="padding: 5px; font-size: 0.8em; color: #ccc;">Criação de mandala circular (símbolo de totalidade).</figcaption>
+                    </figure>
+
+                    <ul>
+                        <li><strong>Campo:</strong> Psicoterapia / Arte</li>
+                        <li><strong>Origem:</strong> Século XX</li>
+                        <li><strong>Pioneira no Brasil:</strong> Nise da Silveira</li>
+                        
+                        <li>
+                            <strong>Foco no Não-Verbal:</strong><br>
+                            <label style="font-size: 0.8em; color: #ccc;">(Muito Alto)</label>
+                            <meter value="9" min="0" max="10" title="9 de 10 na escala de comunicação não-verbal">9/10</meter>
+                        </li>
+                        <li>
+                            <strong>Exigência Técnica:</strong><br>
+                            <label style="font-size: 0.8em; color: #ccc;">(Não é necessário saber desenhar)</label>
+                            <meter value="1" min="0" max="10" title="Baixa necessidade de habilidade técnica">1/10</meter>
+                        </li>
+                    </ul>
+                </aside>
+
+                <p>A <strong>arteterapia</strong> é uma disciplina híbrida baseada principalmente nos campos das artes e da psicologia. Na prática, utiliza recursos artísticos com finalidade terapêutica.</p>
+
+                <details open>
+                    <summary>Índice</summary>
+                    <ol>
+                        <li><a href="#historia">História e Nise da Silveira</a></li>
+                        <li><a href="#materiais">Materiais Utilizados</a></li>
+                        <li><a href="#processo">O Processo Terapêutico</a></li>
+                    </ol>
+                </details>
+
+                <section id="historia">
+                    <h2>1. História e Nise da Silveira</h2>
+                    <p>No Brasil, a arteterapia ganhou força com o trabalho revolucionário da psiquiatra <strong>Nise da Silveira</strong>. Em 1946, ela fundou a Seção de Terapêutica Ocupacional no Centro Psiquiátrico Nacional, no Rio de Janeiro.</p>
+                    <p>Contrária aos tratamentos agressivos da época (como eletrochoque e lobotomia), Nise ofereceu tintas e telas aos pacientes. O resultado foi o nascimento de obras de arte complexas que revelavam o inconsciente, admiradas inclusive por Carl Gustav Jung.</p>
+                    <blockquote>
+                        "O inconsciente não fala, ele se mostra em imagens." — <em>Nise da Silveira</em>
+                    </blockquote>
+                </section>
+
+                <section id="materiais">
+                    <h2>2. Materiais Utilizados</h2>
+                    <p>Diferentes materiais evocam diferentes respostas emocionais. A escolha não é aleatória.</p>
+                    <dl>
+                        <dt style="color: #fff; margin-top: 10px;"><strong>Aquarela e Tinta Guache</strong></dt>
+                        <dd>Materiais fluidos. Facilitam a expressão das emoções e o relaxamento do controle racional.</dd>
+                        
+                        <dt style="color: #fff; margin-top: 10px;"><strong>Lápis de Cor e Canetinhas</strong></dt>
+                        <dd>Materiais rígidos. Oferecem maior controle e contorno, úteis para organizar pensamentos caóticos.</dd>
+                        
+                        <dt style="color: #fff; margin-top: 10px;"><strong>Argila</strong></dt>
+                        <dd>Permite o trabalho tridimensional e regressivo, estimulando o tato e a reconstrução.</dd>
+                    </dl>
+                </section>
+
+                <section id="processo">
+                    <h2>3. O Processo Terapêutico</h2>
+                    <p>Uma sessão de arteterapia não é uma aula de artes. O foco está no processo criativo, não na estética final. Veja abaixo a distribuição de tempo estimada em uma sessão padrão:</p>
+
+                    <div class="progress-box">
+                        <label><strong>1. Acolhimento e Fala Inicial:</strong></label>
+                        <br>
+                        <progress value="20" max="100">20%</progress>
+                        <br><br>
+
+                        <label><strong>2. Produção Artística (O Fazer):</strong></label>
+                        <br>
+                        <progress value="60" max="100">60%</progress>
+                        <br><br>
+
+                        <label><strong>3. Reflexão Final sobre a Obra:</strong></label>
+                        <br>
+                        <progress value="20" max="100">20%</progress>
+                    </div>
+                </section>
+
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>Esta página foi criada para fins educativos no desafio de HTML5.</p>
+        <p>&copy; 2025 WikiDesafio.</p>
+    </footer>
+
+</body>
+</html>
